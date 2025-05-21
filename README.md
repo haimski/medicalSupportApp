@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
+# Nayara AI – Breast Cancer Support Companion (Frontend Assignment)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project simulates a responsive web app designed to support breast cancer patients, with two main interfaces:
+1. A compassionate AI chat companion for patients
+2. A dashboard for medical staff to track patient mood, symptoms, and care tasks
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧠 Product Thinking
 
-## Expanding the ESLint configuration
+**Target user**: A recently diagnosed breast cancer patient who may feel anxious, overwhelmed, or isolated, and needs gentle emotional support.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Design principles**:
+- Clean and friendly UI, no clinical coldness
+- Fast response and intuitive input
+- Emphasis on emotional experience (mood, empathy, follow-up)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React 18** (with Vite)
+- **TypeScript**
+- **TailwindCSS** (for fast responsive styling)
+- **Zustand** (lightweight state management)
+- **React Router** (SPA structure)
+- No external backend – AI replies are simulated.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## ✨ Features
+
+### 💬 AI Chat Interface
+- Clean chat UI, similar to WhatsApp
+- Smart auto-responses based on message intent (e.g., fatigue, pain, loneliness)
+- "AI is typing..." animation
+- Enter key support for message sending
+
+### 🩺 Patient Dashboard (for caregivers)
+- Daily mood tracker (emoji-based)
+- Symptom checklist (selectable)
+- Care task list (interactive to-do)
+- Mock notification at top
+
+### 📱 Responsive Design
+- Fully responsive from mobile to desktop
+- Tailwind breakpoints used throughout
+
+---
+
+## 🧩 Architecture
+
+- Feature-based folder structure:
+  src/
+  ├── features/
+  │ ├── chat/
+  │ └── dashboard/
+  ├── app/                # Routing & layout
+  ├── components/         # (Reserved for reusable UI)
+  ├── utils/              # Helper hooks and logic
+  └── types/              # (Reserved for global types)
+
+
+- Global state is split into:
+- `chatStore` (manages messages and AI typing)
+- `dashboardStore` (mood, symptoms, tasks)
+
+---
+
+## 🚀 Setup Instructions
+
+```bash
+npm install
+npm run dev
+
+App will run at: http://localhost:5173/
+
+
+
+🤔 what i would add with more time...
+connection to API or MCP to use a real AI model for the chat
+
+Improve accessibility (ARIA roles, keyboard nav)
+
+Save dashboard state to backend/localStorage
+
+Add animations (e.g. chat bubbles fade in)
+
+Personalize add avatars, user details, 
+
+✅ Assumptions
+Chat does not persist across sessions
+No authentication layer (open access for demo)
+All patient data is mocked locally
+
+❤️ Final Note
+Developing a solution that makes a difference in people’s healthcare is a privilege to me.
+I truely enjoyed building this app.
