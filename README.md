@@ -89,7 +89,7 @@ Save dashboard state to backend/localStorage
 
 Add animations (e.g. chat bubbles fade in)
 
-Personalize add avatars, user details, 
+Personalize add avatars, user details and theming 
 
 ✅ Assumptions
 Chat does not persist across sessions
