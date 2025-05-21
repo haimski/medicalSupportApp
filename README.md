@@ -50,15 +50,18 @@ This project simulates a responsive web app designed to support breast cancer pa
 
 ## 🧩 Architecture
 
-Feature-based folder structure:
-  src/
-      features/
-        chat/
-        dashboard/
-      app/                # Routing & layout
-      components/         # (Reserved for reusable UI)
-      utils/              # Helper hooks and logic
-      types/              # (Reserved for global types)
+**Feature-based folder structure:**
+-  Feature-based folder structure
+```
+src/
+  features/
+    chat/
+    dashboard/
+  app/                # Routing & layout
+  components/         # (Reserved for reusable UI)
+  utils/              # Helper hooks and logic
+  types/              # (Reserved for global types)
+```
 
 
 - Global state is split into:
